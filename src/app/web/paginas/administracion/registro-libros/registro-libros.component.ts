@@ -11,7 +11,14 @@ import { LibrosService } from 'src/app/web/servicios/libros.service';
 })
 export class RegistroLibrosComponent implements OnInit {
   i = 0;
-  libro: Libro[] = [];
+  libro: Libro = {
+    id:'',
+    nombre:'',
+    autor:'',
+    fechaPub:'',
+    descripcion:''
+  };
+  libros:Libro[] =[];
 
   errorForm = false;
   libroForm: FormGroup = new FormGroup({
@@ -22,7 +29,12 @@ export class RegistroLibrosComponent implements OnInit {
     descripcion: new FormControl('', [Validators.required]),
   });
 
-  constructor(private libroservice:LibrosService) { }
+  constructor(private libroservice:LibrosService) { 
+    
+      this.libroservice.todosLibros().subscribe(data => this.libros = data);
+    }
+
+  
 
   ngOnInit(): void {
   }
@@ -37,23 +49,6 @@ export class RegistroLibrosComponent implements OnInit {
         console.log(data)});;
     }
     libroForm.reset();
-  }
-
-  mostrarDatos(){}
-
-  editar(libroForm: any){
-    for (let index = 0; index < libroForm.length; index++) {
-      const element = libroForm[index];
-
-      
-    }
-  }
-
-  eliminar(){}
-
-
-  crearLibro(servicioForm:Libro){
-console.log(servicioForm);
   }
 
 }

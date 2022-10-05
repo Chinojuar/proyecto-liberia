@@ -20,7 +20,7 @@ libro:Libro[] = [];
     return this.http.get<Libro>("http://localhost:9095/obtenerProducto/id")
   }
   
-  crearLibro(libro: Libro[]) {
+  crearLibro(libro: Libro) {
     return this.http.put<Libro>("http://localhost:9095/guardarDtoProducto",libro);
   }
   
@@ -32,4 +32,5 @@ libro:Libro[] = [];
   borrar(id: number) {
     const url ="http://localhost:9095/borrarProducto"
     return this.http.delete<boolean>(`${url}/${id}`);
+}
 }

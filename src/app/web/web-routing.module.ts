@@ -14,6 +14,10 @@ children: [
       component:RegistroLibrosComponent
   },
   {
+    path:'vista-libros',
+    component:RegistroLibrosComponent
+},
+  {
     path:'registro-usuarios',
     component:RegistroUsuariosComponent
   }

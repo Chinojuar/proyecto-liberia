@@ -19,6 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NzFormModule} from 'ng-zorro-antd/form'
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { VistaLibrosComponent } from './paginas/administracion/vista-libros/vista-libros.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     RegistroUsuariosComponent,
     WebComponent,
     SideBarComponent,
-    FooterComponent
+    FooterComponent,
+    VistaLibrosComponent
   ],
   imports: [
     CommonModule,
@@ -46,7 +49,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     ReactiveFormsModule,
     NzFormModule,
     NzInputModule,
-    NzButtonModule
+    NzButtonModule,
+    NzTableModule
     
   
   ]
